@@ -10,4 +10,4 @@ jobs:
         runs-on: ubuntu-latest
         steps: # Steps to be executed in the job
             - name: "Running on master push"
-              run: echo "This is a push event on master branch"
+              run: echo "Running on master push"
