@@ -4,6 +4,8 @@ on:
         branches:
             - master
             - test
+    schedule: #Event: Schedule the workflow to run at specific times
+        - cron: '0 10 * * 2,4' # Runs every day at midnight
     pull_request: #Event: Whenever a pull request is made to the master branch
         branches:
             - master
@@ -30,3 +32,10 @@ jobs:
         steps: # Steps to be executed in the job
             - name: "Running on workflow dispatch"
               run: echo "Running on workflow dispatch"
+
+    on-schedule: #Job 4
+        if: github.event_name == 'schedule' #Condition to check if the event is a schedule event
+        runs-on: ubuntu-latest
+        steps: # Steps to be executed in the job
+            - name: "Running on schedule"
+              run: echo "Running on schedule"
