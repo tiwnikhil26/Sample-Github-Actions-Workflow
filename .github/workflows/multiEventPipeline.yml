@@ -2,8 +2,8 @@ name: "multi event pipeline/workflow"
 on:
     push:  #Event: Whenever a push is made to the repostiory on the master branch 
         branches:
-            -master
-            -test
+            - master
+            - test
 
 jobs:
     on-push: #Job name
